@@ -3,289 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro con Validaciones</title>
+    <title>GlobalImport S.A. - Importaciones Globales</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Registro de Usuario</h1>
-    <form id="registroForm" novalidate>
-        <fieldset>
-            <legend>Datos Personales</legend>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>GlobalImport S.A.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#registro">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <label for="nombre">Nombre completo</label>
-            <input type="text" id="nombre" name="nombre" maxlength="60" required>
-            <div class="small">Solo letras y espacios. 3-60 caracteres.</div>
-            <div class="error" id="error-nombre"></div>
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido a GlobalImport S.A.</h2>
+            <p>Tu socio en importaciones globales. Ofrecemos soluciones integrales para importar productos de calidad a precios competitivos.</p>
+        </section>
 
-            <label for="fechaNacimiento">Fecha de nacimiento</label>
-            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
-            <div class="small">Debes ser mayor de 18 años al momento del registro.</div>
-            <div class="error" id="error-fecha"></div>
+        <section id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <p>Descubre cómo podemos ayudarte con tus necesidades de importación.</p>
+            <!-- Aquí se pueden agregar más detalles sobre servicios -->
+        </section>
 
-            <label for="rut">RUT</label>
-            <input type="text" id="rut" name="rut" inputmode="numeric" maxlength="8" required>
-            <div class="small">Solo números. 7-8 dígitos.</div>
-            <div class="error" id="error-rut"></div>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Ponte en contacto con nosotros para más información.</p>
+        </section>
 
-            <label for="genero">Género</label>
-            <select id="genero" name="genero" required>
-                <option value="">Selecciona un género</option>
-                <option value="femenino">Femenino</option>
-                <option value="masculino">Masculino</option>
-                <option value="otro">Otro</option>
-            </select>
-            <div class="error" id="error-genero"></div>
+        <section id="registro">
+            <h2>Registro</h2>
+            <p>Regístrate para acceder a nuestros servicios exclusivos.</p>
+        </section>
+    </main>
 
-            <label for="nombre">nacionalidad</label>
-            <input type="text" id="nacionalidad" name="nacionalidad" maxlength="60" required>
-            <div class="small">Solo letras y espacios. 3-60 caracteres.</div>
-            <div class="error" id="error-nombre"></div>
-            </select>
-            <div class="error" id="error-nacionalidad"></div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Contacto y Acceso</legend>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            <div class="small">Debe contener @ y un dominio válido.</div>
-            <div class="error" id="error-email"></div>
-
-            <label for="confirmarEmail">Confirmar email</label>
-            <input type="email" id="confirmarEmail" name="confirmarEmail" required>
-            <div class="error" id="error-confirmarEmail"></div>
-
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" required>
-            <div class="small">Mínimo 8 caracteres, 1 mayúscula, 1 número y 1 carácter especial (!@#$%^&*).</div>
-            <div class="error" id="error-password"></div>
-
-            <label for="confirmarPassword">Confirmar contraseña</label>
-            <input type="password" id="confirmarPassword" name="confirmarPassword" required>
-            <div class="error" id="error-confirmarPassword"></div>
-
-            <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" required>
-            <div class="small">Solo dígitos, +, -, espacios. Mínimo 8 dígitos numéricos.</div>
-            <div class="error" id="error-telefono"></div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Dirección</legend>
-
-            <label for="pais">País</label>
-            <input type="text" id="pais" name="pais" required>
-            <div class="error" id="error-pais"></div>
-
-            <label for="provincia">Provincia</label>
-            <input type="text" id="provincia" name="provincia" required>
-            <div class="error" id="error-provincia"></div>
-
-            <label for="ciudad">Ciudad</label>
-            <input type="text" id="ciudad" name="ciudad" required>
-            <div class="small">Solo letras y espacios. Mínimo 2 caracteres.</div>
-            <div class="error" id="error-ciudad"></div>
-
-            <label for="calle">Calle y número</label>
-            <input type="text" id="calle" name="calle" required>
-            <div class="small">No puede estar vacío. Mínimo 5 caracteres.</div>
-            <div class="error" id="error-calle"></div>
-
-            <label for="codigoPostal">Código postal</label>
-            <input type="text" id="codigoPostal" name="codigoPostal" required>
-            <div class="small">Solo alfanumérico, 4-10 caracteres.</div>
-            <div class="error" id="error-codigoPostal"></div>
-
-            <label for="referencia">Referencia adicional (opcional)</label>
-            <textarea id="referencia" name="referencia" rows="4" maxlength="200"></textarea>
-            <div class="counter"><span>Máx. 200 caracteres</span><span id="referenciaContador">0/200</span></div>
-            <div class="error" id="error-referencia"></div>
-        </fieldset>
-
-        <button type="submit">Enviar registro</button>
-    </form>
-
-    <script>
-        const form = document.getElementById('registroForm');
-        const referencia = document.getElementById('referencia');
-        const contador = document.getElementById('referenciaContador');
-
-        const errors = {
-            nombre: document.getElementById('error-nombre'),
-            fecha: document.getElementById('error-fecha'),
-            rut: document.getElementById('error-rut'),
-            genero: document.getElementById('error-genero'),
-            nacionalidad: document.getElementById('error-nacionalidad'),
-            email: document.getElementById('error-email'),
-            confirmarEmail: document.getElementById('error-confirmarEmail'),
-            password: document.getElementById('error-password'),
-            confirmarPassword: document.getElementById('error-confirmarPassword'),
-            telefono: document.getElementById('error-telefono'),
-            pais: document.getElementById('error-pais'),
-            provincia: document.getElementById('error-provincia'),
-            ciudad: document.getElementById('error-ciudad'),
-            calle: document.getElementById('error-calle'),
-            codigoPostal: document.getElementById('error-codigoPostal'),
-            referencia: document.getElementById('error-referencia')
-        };
-
-        const regex = {
-            nombre: /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,60}$/,
-            email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-            rut: /^\d{7,8}$/,
-            nacionalidad: /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,60}$/,
-            ciudad: /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,}$/, 
-            telefono: /^[+\d\s-]+$/,
-            codigoPostal: /^[A-Za-z0-9]{4,10}$/,
-            password: /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/
-        };
-
-        function clearErrors() {
-            Object.values(errors).forEach(el => el.textContent = '');
-        }
-
-        function calcularEdad(fecha) {
-            const hoy = new Date();
-            const nacimiento = new Date(fecha);
-            let edad = hoy.getFullYear() - nacimiento.getFullYear();
-            const mes = hoy.getMonth() - nacimiento.getMonth();
-            if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
-                edad -= 1;
-            }
-            return edad;
-        }
-
-        function isValidRutNumber(value) {
-            if (!regex.rut.test(value)) return false;
-            if (/^(\d)\1*$/.test(value)) return false;
-            return true;
-        }
-
-        function countDigits(value) {
-            return (value.match(/\d/g) || []).length;
-        }
-
-        function validarFormulario() {
-            clearErrors();
-            let valido = true;
-
-            const nombre = form.nombre.value.trim();
-            if (!regex.nombre.test(nombre)) {
-                errors.nombre.textContent = 'Nombre inválido. Solo letras y espacios entre 3 y 60 caracteres.';
-                valido = false;
-            }
-
-            const fechaNacimiento = form.fechaNacimiento.value;
-            if (!fechaNacimiento) {
-                errors.fecha.textContent = 'La fecha de nacimiento es obligatoria.';
-                valido = false;
-            } else if (calcularEdad(fechaNacimiento) < 18) {
-                errors.fecha.textContent = 'Debes ser mayor de 18 años.';
-                valido = false;
-            }
-
-            const rut = form.rut.value.trim();
-            if (!isValidRutNumber(rut)) {
-                errors.rut.textContent = 'RUT inválido. Debe tener 7 u 8 dígitos numéricos.';
-                valido = false;
-            }
-
-            if (!form.genero.value) {
-                errors.genero.textContent = 'Selecciona un género.';
-                valido = false;
-            }
-
-            const nacionalidad = form.nacionalidad.value.trim();
-            if (!regex.nacionalidad.test(nacionalidad)) {
-                errors.nacionalidad.textContent = 'Nacionalidad inválida. Solo letras y espacios entre 3 y 60 caracteres.';
-                valido = false;
-            }
-            const email = form.email.value.trim();
-            if (!regex.email.test(email)) {
-                errors.email.textContent = 'Email inválido.';
-                valido = false;
-            }
-
-            const confirmarEmail = form.confirmarEmail.value.trim();
-            if (email !== confirmarEmail) {
-                errors.confirmarEmail.textContent = 'Los emails no coinciden.';
-                valido = false;
-            }
-
-            const password = form.password.value;
-            if (!regex.password.test(password)) {
-                errors.password.textContent = 'La contraseña debe tener al menos 8 caracteres, 1 mayúscula, 1 número y 1 carácter especial.';
-                valido = false;
-            }
-
-            const confirmarPassword = form.confirmarPassword.value;
-            if (password !== confirmarPassword) {
-                errors.confirmarPassword.textContent = 'Las contraseñas no coinciden.';
-                valido = false;
-            }
-
-            const telefono = form.telefono.value.trim();
-            if (!regex.telefono.test(telefono) || countDigits(telefono) < 8) {
-                errors.telefono.textContent = 'Teléfono inválido. Debe tener al menos 8 dígitos numéricos.';
-                valido = false;
-            }
-
-            if (!form.pais.value.trim()) {
-                errors.pais.textContent = 'El país no puede estar vacío.';
-                valido = false;
-            }
-
-            if (!form.provincia.value.trim()) {
-                errors.provincia.textContent = 'La provincia no puede estar vacía.';
-                valido = false;
-            }
-
-            const ciudad = form.ciudad.value.trim();
-            if (!regex.ciudad.test(ciudad)) {
-                errors.ciudad.textContent = 'Ciudad inválida. Solo letras y espacios, mínimo 2 caracteres.';
-                valido = false;
-            }
-
-            const calle = form.calle.value.trim();
-            if (calle.length < 5) {
-                errors.calle.textContent = 'Calle y número deben tener al menos 5 caracteres.';
-                valido = false;
-            }
-
-            const codigoPostal = form.codigoPostal.value.trim();
-            if (!regex.codigoPostal.test(codigoPostal)) {
-                errors.codigoPostal.textContent = 'Código postal inválido. Sólo 4-10 caracteres alfanuméricos.';
-                valido = false;
-            }
-
-            const referenciaValor = referencia.value.trim();
-            if (referenciaValor.length > 200) {
-                errors.referencia.textContent = 'Referencia no puede superar los 200 caracteres.';
-                valido = false;
-            }
-
-            return valido;
-        }
-
-        referencia.addEventListener('input', () => {
-            const longitud = referencia.value.length;
-            contador.textContent = `${longitud}/200`;
-            if (longitud > 200) {
-                errors.referencia.textContent = 'Referencia no puede superar los 200 caracteres.';
-            } else {
-                errors.referencia.textContent = '';
-            }
-        });
-
-        form.addEventListener('submit', event => {
-            event.preventDefault();
-            if (validarFormulario()) {
-                alert('Registro enviado correctamente.');
-                form.reset();
-                contador.textContent = '0/200';
-            }
-        });
-    </script>
+    <footer>
+        <p>&copy; 2023 GlobalImport S.A. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
